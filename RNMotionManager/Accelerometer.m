@@ -14,6 +14,10 @@
 
 RCT_EXPORT_MODULE();
 
+- (NSArray<NSString *> *)supportedEvents {
+    return @[@"AccelerationData"];
+}
+
 - (id) init {
   self = [super init];
   NSLog(@"Accelerometer");
