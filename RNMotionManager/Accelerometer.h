@@ -5,9 +5,10 @@
 //
 
 #import "RCTBridgeModule.h"
+#import "RCTEventEmitter.h"
 #import <CoreMotion/CoreMotion.h>
 
-@interface Accelerometer : NSObject <RCTBridgeModule> {
+@interface Accelerometer : RCTEventEmitter <RCTBridgeModule> {
   CMMotionManager *_motionManager;
 }
 - (void) setAccelerometerUpdateInterval:(double) interval;

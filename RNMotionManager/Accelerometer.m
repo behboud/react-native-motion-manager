@@ -75,7 +75,7 @@ RCT_EXPORT_METHOD(startAccelerometerUpdates) {
   NSLog(@"startAccelerometerUpdates");
   [self->_motionManager startAccelerometerUpdates];
 
-  /* Receive the ccelerometer data on this block */
+  /* Receive the accelerometer data on this block */
   [self->_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue]
                                     withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)
    {
@@ -85,7 +85,7 @@ RCT_EXPORT_METHOD(startAccelerometerUpdates) {
      double timestamp = accelerometerData.timestamp;
      NSLog(@"startAccelerometerUpdates: %f, %f, %f, %f", x, y, z, timestamp);
 
-     [self.bridge.eventDispatcher sendDeviceEventWithName:@"AccelerationData" body:@{
+     [self sendEventWithName:@"AccelerationData" body:@{
                                                                              @"acceleration": @{
                                                                                  @"x" : [NSNumber numberWithDouble:x],
                                                                                  @"y" : [NSNumber numberWithDouble:y],
