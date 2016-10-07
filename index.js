@@ -1,3 +1,3 @@
-var { Accelerometer, Gyroscope, Magnetometer } = require('react-native').NativeModules;
+var { Accelerometer, Gyroscope, Magnetometer, DeviceMotion } = require('react-native').NativeModules;
 
-module.exports = { Accelerometer, Gyroscope, Magnetometer };
+module.exports = { Accelerometer, Gyroscope, Magnetometer, DeviceMotion };
