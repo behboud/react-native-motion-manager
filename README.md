@@ -54,13 +54,13 @@ DeviceEventEmitter.addListener('GyroData', function (data) {
   * data.rotationRate.z
   **/
 });
-Gyroscope.startGyroUpdates(); // you'll start getting GyroscopicData events above
+Gyroscope.startGyroUpdates(); // you'll start getting AccelerationData events above
 Gyroscope.stopGyroUpdates();
 ```
 
-### Magnetometer
+### Magnetomer
 ```js
-Magnetometer.setMagnetometerUpdateInterval(0.1); // in seconds
+Magnetometer.setAccelerometerUpdateInterval(0.1); // in seconds
 DeviceEventEmitter.addListener('MagnetometerData', function (data) {
   /**
   * data.magneticField.x
@@ -68,8 +68,22 @@ DeviceEventEmitter.addListener('MagnetometerData', function (data) {
   * data.magneticField.z
   **/
 });
-Magnetometer.startMagnetometerUpdates(); // you'll start getting MagnetomerData events above
+Magnetometer.startMagnetometerUpdates(); // you'll start getting AccelerationData events above
 Magnetometer.stopMagnetometerUpdates();
+```
+
+### Filtered DeviceMotion data (only gravity)
+```js
+DeviceMotion.setDeviceMotionUpdateInterval(0.1); // in seconds
+DeviceEventEmitter.addListener('MotionData', function (data) {
+  /**
+  * data.gravity.x
+  * data.gravity.y
+  * data.gravity.z
+  **/
+});
+DeviceMotion.startDeviceMotionUpdates(); // you'll start getting MotionData events above
+DeviceMotion.stopDeviceMotionUpdates();
 ```
 
 # Example

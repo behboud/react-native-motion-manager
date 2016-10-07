@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/pwmckenna/react-native-motion-manager",
   "peerDependencies": {
-    "react-native": "*"
+    "react": "15.3.2",
+    "react-native": "0.34.1"
   }
 }
